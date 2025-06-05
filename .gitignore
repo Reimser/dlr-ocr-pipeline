@@ -19,6 +19,9 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.pyc
+output.txt
+mlruns/
 
 # Virtual Environment
 venv/
