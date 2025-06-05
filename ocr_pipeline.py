@@ -5,24 +5,21 @@ import mlflow
 import json
 import os
 from sys import platform
-
-
-
+import platform
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
 
 # ==== KONFIGURATION ====
 PDF_PATH = "pdf.pdf"
 OUTPUT_JSON = "ocr_output.json"
 
-if platform.startswith("win"):
+if platform.system() == "Windows":
     poppler_path = r"C:\Tools\poppler-23\poppler-24.08.0\Library\bin"
 else:
-    poppler_path = None  # unter Linux: kein Pfad nötig
-# ==== PDF in Bilder umwandeln ====
-print(f"📄 Lade PDF: {PDF_PATH}")
-pages = convert_from_path(PDF_PATH, dpi=300, poppler_path=r"C:\Tools\poppler-23\poppler-24.08.0\Library\bin")
+    poppler_path = None  # unter Linux nutzt pdf2image das systemweite Poppler (via apt)
+
+pages = convert_from_path(PDF_PATH, dpi=300, poppler_path=poppler_path)
+
 
 # ==== OCR auf jeder Seite ====
 ocr_data = {
