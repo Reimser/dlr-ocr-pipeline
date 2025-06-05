@@ -4,7 +4,7 @@ This project implements an OCR (Optical Character Recognition) pipeline for docu
 
 ## Setup
 
-1. Install dependencies:
+1. Install dependencies :
 ```bash
 pip install -r requirements.txt
 ```
