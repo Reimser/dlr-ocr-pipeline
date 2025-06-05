@@ -12,7 +12,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update
-          sudo apt install -y tesseract-ocr poppler-utils
+          sudo apt install -y tesseract-ocr poppler-utils tesseract-ocr-deu
 
       - name: Set up Python
         uses: actions/setup-python@v3
