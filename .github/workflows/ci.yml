@@ -22,5 +22,5 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
-      - name: Run OCR script
-        run: python ocr_pipeline.py
+      - name: Run OCR pipeline
+        run: python src/ocr_pipeline.py
